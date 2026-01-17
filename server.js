@@ -10,6 +10,9 @@ const userRoutes = require("./Routes/user.routes");
 const createAdmin = require("./Utils/createAdmin");
 const productRoutes = require("./Routes/product.routes");
 const bulkQuotationRoutes = require("./Routes/bulk-quotation.routes");
+const categoryRoutes = require("./Routes/category.routes")
+const cartRoutes = require("./Routes/cart-routes")
+const orderRoutes = require("./Routes/order.routes");
 // Importing the ENV variables
 const PORT = process.env.PORT || 3002;
 const MONGO_URI = process.env.MONGO_URI;
@@ -44,7 +47,9 @@ app.get("/", (req,res)=>{
 app.use("/api/users" , userRoutes);
 app.use("/api/products" , productRoutes);
 app.use("/api/bulk-quotations" , bulkQuotationRoutes);
-
+app.use("/api/categories" , categoryRoutes);
+app.use("/api/cart" ,cartRoutes );
+app.use("/api/orders" , orderRoutes)
 // Starting the server
 app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
