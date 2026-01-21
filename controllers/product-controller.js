@@ -102,10 +102,25 @@ exports.getProductById = async (req, res) => {
   }
 };
 
+exports.getTotalProducts = async (req, res) => {
+  try {
+    const products = await Product.find()
+      .populate("reviews.userId", "name");
 
+    if (!products) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    res.status(200).json({ success: true, products });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
 
 exports.updateProduct = async (req, res) => {
   try {
+    console.log(req.body);
     const product = await Product.findById(req.params.id);
 
     if (!product) {
@@ -194,23 +209,23 @@ exports.addReview = async (req, res) => {
 };
 
 
-exports.deleteReview = async( req , res)=>{
-  try{
-    const { id: productId , reviewId } = req.params;
+exports.deleteReview = async (req, res) => {
+  try {
+    const { id: productId, reviewId } = req.params;
 
     const product = await Product.findById(productId);
 
-    if(!product){
+    if (!product) {
       return res.status(404).json({ message: "Product not found" });
-    } 
+    }
     product.reviews = product.reviews.filter(
       (review) => review._id.toString() !== reviewId
-    );  
+    );
     await product.save();
 
     res.status(200).json({ success: true, message: "Review deleted", product });
-  }catch(error){
+  } catch (error) {
     res.status(500).json({ message: error.message });
-    
+
   }
 }

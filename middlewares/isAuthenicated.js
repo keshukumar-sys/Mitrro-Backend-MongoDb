@@ -1,7 +1,8 @@
 const { verifyJsonWebToken } = require("../Utils/verifyJsonWebToken");
 async function isAuthenticated(req, res, next) {
     console.log("isAuthenticated middleware called");
-    const token = req.cookies.token;    
+    const token = req.cookies.token;   
+    console.log(token); 
     console.log("isAuthenticated middleware invoked. Token:", token);
     if (!token) {
         return res.status(401).json({ message: "Unauthorized: No token provided" });

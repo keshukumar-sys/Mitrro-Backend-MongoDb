@@ -8,7 +8,8 @@ const {
   updateProduct,
   deleteProduct,
   addReview,
-  deleteReview
+  deleteReview, 
+  getTotalProducts
 } = require("../Controllers/product-controller");
 
 const upload = require("../Utils/multer");
@@ -22,6 +23,7 @@ const isAuthorized = require("../middlewares/isAuthorized");
 
 // Get all products
 router.get("/", getAllProducts);
+router.get("/total_products" , getTotalProducts);
 
 // Get product by ID
 router.get("/:id", getProductById);

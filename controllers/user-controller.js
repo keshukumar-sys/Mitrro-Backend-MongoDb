@@ -71,7 +71,7 @@ async function login(req, res) {
 
         // Generate JWT token
         const token = generateJsonWebToken({ id: user._id, role: user.role });
-
+        console.log(token);
         // Set JWT cookie
         res.cookie("token", token, {
             httpOnly: true,
@@ -101,6 +101,7 @@ async function login(req, res) {
 async function logout(req, res) {
   console.log("Logout request received");
     const token = req.cookies.token;
+    console.log(token);
     console.log("Logout token:", token);
 
     if (!token) {
