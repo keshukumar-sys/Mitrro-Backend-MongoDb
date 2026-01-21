@@ -29,7 +29,7 @@ app.use(cors({
   origin: [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://your-frontend-domain.com"
+    "https://mitrro-admin-panel.vercel.app"
   ],
   credentials: true, // REQUIRED for cookies
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
