@@ -10,7 +10,7 @@ const {
   addReview,
   deleteReview, 
   getTotalProducts
-} = require("../Controllers/product-controller");
+} = require("../controllers/product-controller");
 
 const upload = require("../Utils/multer");
 const isAuthenticated = require("../middlewares/isAuthenicated");
