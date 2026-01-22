@@ -34,7 +34,7 @@ async function getAllQuotations(req, res) {
     const userId = req.user.id;
 
     try {
-        const quotations = await BulkQuotationModel.find({ userId }).populate("productId", "name price");
+        const quotations = (await BulkQuotationModel.find({ userId }).populate("productId", "name price"));
         return res.status(200).json({ quotations });
     } catch (error) {
         console.error("Error fetching quotations:", error);

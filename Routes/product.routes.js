@@ -23,7 +23,10 @@ const isAuthorized = require("../middlewares/isAuthorized");
 
 // Get all products
 router.get("/", getAllProducts);
-router.get("/total_products" , getTotalProducts);
+router.get("/total_products" ,(req, res , next)=>{
+  console.log("getting all products");
+  next()
+}  , getTotalProducts);
 
 // Get product by ID
 router.get("/:id", getProductById);

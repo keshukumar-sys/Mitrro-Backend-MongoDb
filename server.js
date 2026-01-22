@@ -29,6 +29,7 @@ app.use(cors({
   origin: [
     "http://localhost:3000",
     "http://localhost:5173",
+    "http://localhost:8080",
     "https://mitrro-admin-panel.vercel.app"
   ],
   credentials: true, // REQUIRED for cookies
@@ -41,8 +42,6 @@ app.get("/", (req,res)=>{
     console.log("Server is running");
     res.send("Server is running");
 });
-
-
 // setting up the routes
 app.use("/api/users" , userRoutes);
 app.use("/api/products" , productRoutes);

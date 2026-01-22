@@ -104,9 +104,10 @@ exports.getProductById = async (req, res) => {
 
 exports.getTotalProducts = async (req, res) => {
   try {
+    console.log("Hello keshu how are you");
     const products = await Product.find()
       .populate("reviews.userId", "name");
-
+    console.log("hello products " , products);
     if (!products) {
       return res.status(404).json({ message: "Product not found" });
     }
