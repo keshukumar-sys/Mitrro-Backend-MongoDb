@@ -56,7 +56,7 @@ exports.createProduct = async (req, res) => {
 exports.getAllProducts = async (req, res) => {
   try {
     const { category, brandId, minPrice, maxPrice } = req.query;
-    console.log(brandId, category, minPrice, maxPrice)
+    // console.log(brandId, category, minPrice, maxPrice)
     let query = { isApproved: true };
 
     if (category) query.category = category;

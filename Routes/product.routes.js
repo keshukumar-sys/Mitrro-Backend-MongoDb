@@ -44,7 +44,6 @@ router.post(
     next();
   },
   isAuthenticated,
-  isAuthorized,
   upload.array("images", 5),
   createProduct
 );
@@ -53,7 +52,6 @@ router.post(
 router.put(
   "/:id",
   isAuthenticated,
-  isAuthorized,
   upload.array("images", 5),
   updateProduct
 );
@@ -63,7 +61,6 @@ router.put(
 router.delete(
   "/:id",
   isAuthenticated,
-  isAuthorized,
   deleteProduct
 );
 

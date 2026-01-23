@@ -14,7 +14,6 @@ const isAuthorized = require("../middlewares/isAuthorized");
 router.post(
     "/category",
     isAuthenticated,
-    isAuthorized,
     upload.single("categoryImage"),
     createCategory
 );
@@ -24,11 +23,10 @@ router.get("/categories", getAllCategorires);
 router.put(
     "/category/:id",
     isAuthenticated,
-    isAuthorized,
     upload.single("categoryImage"),
     updateCategory
 );
 
-router.delete("/category/:id", isAuthenticated, isAuthorized, deleteCategory);
+router.delete("/category/:id", isAuthenticated, deleteCategory);
 
 module.exports = router;
