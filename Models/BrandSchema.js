@@ -38,6 +38,7 @@ const brandSchema = new mongoose.Schema({
         },
         country: {
             type: String,
+            default:"India",
             required: [true, "Country is required"]
         }
      },
@@ -52,6 +53,11 @@ const brandSchema = new mongoose.Schema({
         enum: ["brand"],
         default: "brand"
     },
+    status:{
+        type:Boolean,
+        default:false
+
+    }
 }, {
     timestamps: true
 });
