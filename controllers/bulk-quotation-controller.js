@@ -49,7 +49,7 @@ async function getQuotation(req, res) {
 
     try {
         const quotation = await BulkQuotationModel.findOne({ _id: quotationId, userId }).populate("productId", "name price");
-
+        
         if (!quotation) {
             return res.status(404).json({ message: "Quotation not found" });
         }

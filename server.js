@@ -31,7 +31,8 @@ app.use(cors({
     "http://localhost:5173",
     "http://localhost:8080",
     "https://mitrro-admin-panel-24um.vercel.app",
-    "https://mitrro-admin-panel.vercel.app"
+    "https://mitrro-admin-panel.vercel.app",
+    "https://mitrro.vercel.app"
   ],
   credentials: true, // REQUIRED for cookies
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
