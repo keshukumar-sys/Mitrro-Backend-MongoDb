@@ -8,6 +8,7 @@ exports.createProduct = async (req, res) => {
       name,
       description,
       price,
+      discountedPrice,
       stock,
       category,
       subcategory,
@@ -33,6 +34,7 @@ exports.createProduct = async (req, res) => {
       name,
       description,
       price,
+      discountedPrice,
       stock,
       category,
       subcategory,
@@ -107,7 +109,7 @@ exports.getTotalProducts = async (req, res) => {
     console.log("Hello keshu how are you");
     const products = await Product.find()
       .populate("reviews.userId", "name");
-    console.log("hello products " , products);
+    console.log("hello products ", products);
     if (!products) {
       return res.status(404).json({ message: "Product not found" });
     }

@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "http://localhost:5173",
+    "http://localhost:5174",
     "http://localhost:8080",
     "https://mitrro-admin-panel-24um.vercel.app",
     "https://mitrro-admin-panel.vercel.app",

@@ -18,6 +18,11 @@ const productSchema = new mongoose.Schema(
       required: [true, "Product price is required"],
     },
 
+    discountedPrice: {
+      type: Number,
+      default: null,
+    },
+
     bulkPrice: [
       {
         minQty: {
